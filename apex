@@ -1,19 +1,29 @@
-public class LinearSearchExample {
-    // Method to perform a linear search in an array
-    public static Integer linearSearch(List<Integer> data, Integer target) {
-        for (Integer i = 0; i < data.size(); i++) {
-            if (data[i] == target) {
-                return i;  // Return the index of the target element
+public class LinearSearch {
+
+    public static void demo(Integer key) {
+        System.debug('Linear search');
+        
+        List<Integer> lon = new List<Integer>();
+        lon.add(3);
+        lon.add(4);
+        lon.add(5);
+        lon.add(6);
+        
+        System.debug('List: ' + lon);
+        
+        Integer s = -1;
+        
+        for (Integer i = 0; i < lon.size(); i++) {
+            if (key == lon[i]) {
+                s = 1;
+                break; // Break the loop once the element is found
             }
         }
-        return -1;  // Return -1 if the target is not found
-    }
-
-    // Example usage of the linearSearch method
-    public static void testLinearSearch() {
-        List<Integer> numbers = new List<Integer>{10, 20, 30, 40, 50};
-        Integer target = 30;
-        Integer index = linearSearch(numbers, target);
-        System.debug('Index of ' + target + ': ' + index);  // Should output: Index of 30: 2
+        
+        if (s == 1) {
+            System.debug('Element Found');
+        } else {
+            System.debug('Element Not Found');
+        }
     }
 }
